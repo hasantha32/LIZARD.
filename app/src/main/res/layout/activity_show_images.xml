@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbarX"
+        layout="@layout/toolbar"
+        android:background="#FFFDFD"
+        app:navigationIcon="@android:drawable/btn_star" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".showImages">
+
+        <Button
+            android:id="@+id/showImagesBtn"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="70dp"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/holo_green_dark"
+            android:onClick="getData"
+            android:text="@string/show_images"
+            android:textColor="@android:color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/imagesRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/showImagesBtn"
+            android:layout_marginTop="30dp" />
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

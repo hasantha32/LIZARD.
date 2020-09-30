@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".insertImages" >
+
+    <include
+        android:id="@+id/toolbarX"
+        layout="@layout/toolbar"
+        android:background="#FFFDFD"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@android:drawable/btn_star" />
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSend"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/btn_upload_to_db"
+            android:contentDescription="@string/btn_send_to_db"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.39"
+            tools:srcCompat="@drawable/savetodb" />
+
+        <TextView
+            android:id="@+id/textViewSelectedCount"
+            android:layout_width="10dp"
+            android:layout_height="11dp"
+            android:background="@drawable/backgroud_count_selected_btn"
+            android:gravity="center"
+            android:minWidth="5dp"
+            android:minHeight="20dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:text="@string/sendCount"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@id/layoutSend"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintRight_toRightOf="@id/layoutSend"
+            app:layout_constraintTop_toTopOf="@id/layoutSend" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout> -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarX"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <EditText
+            android:id="@+id/imageNameET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/enter_the_image_name_here"
+            android:hint="@string/enter_the_image_name_here"
+            android:inputType=""
+            android:maxLength="25"
+            android:textColor="@android:color/holo_green_dark"
+            android:textColorHint="@android:color/holo_green_dark" />
+
+        <ImageView
+            android:id="@+id/imageX"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_below="@id/imageNameET"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/imageviewer"
+            android:onClick="chooseImage"
+            android:src="@drawable/ic_photo_black_24dp" />
+
+        <TextView
+            android:id="@+id/txtImgdescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/txtAddImages"
+
+            android:layout_below="@+id/imageX"
+
+
+
+            app:layout_constraintBottom_toTopOf="@+id/imageNameET"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/imageX"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="55dp"
+            android:background="@android:color/holo_green_dark"
+            android:onClick="storeImage"
+            android:text="@string/save_image"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/moveToShowActivity"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/saveBtn"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="33dp"
+            android:layout_marginBottom="46dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="@string/move_to_show_activity"
+            android:textColor="@android:color/white" />
+
+        <!-- android:onClick="moveToShowActivity"-->
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
